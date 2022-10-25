@@ -81,7 +81,7 @@ function addRole() {
     const questions = userInterface("add a role")
     inquirer.prompt(questions)
         .then(answers => {
-            db.query("INSERT INTO role (role_title, salary, department_id) values (?)", [answers.title, answers.salary, answers.department_id], (err, result) => {
+            db.query("INSERT INTO role (role_title, salary, department_id) values (?,?,?)", [answers.title, answers.salary, answers.department_id], (err, result) => {
                 console.table(result)
                 init();
             })
@@ -92,7 +92,7 @@ function addEmployee() {
     const questions = userInterface("add an employee")
     inquirer.prompt(questions)
         .then(answers => {
-            db.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) values (?)", [answers.firstName, answers.lastName, answers.role, answers.manager], (err, result) => {
+            db.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) values (?,?,?,?)", [answers.firstName, answers.lastName, answers.role, answers.manager], (err, result) => {
                 console.table(result)
                 init();
             })
