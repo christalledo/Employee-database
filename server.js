@@ -99,5 +99,18 @@ function addEmployee() {
         })
 }
 
+
+function updateEmployee() {
+    const questions = userInterface("update an employee role")
+    inquirer.prompt(questions)
+        .then(answers => {
+            db.query(`UPDATE employee set employee_id = ?,${answers.employee_id} where id = ?, ${answers.role_id}`, (err, result) => {
+                console.table(result)
+                init();
+            })
+        })
+}
+
+
 init();
 

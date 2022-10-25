@@ -53,7 +53,7 @@ function questions(condition) {
         {
           // Description
           type: "input",
-          message: "Please enter the role of the employee",
+          message: "Please enter the role_id of the employee",
           name: "role",
         },
         {
