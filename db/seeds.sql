@@ -12,8 +12,8 @@ VALUES (1, "Human Resources"),
 
 
 INSERT INTO role (id, role_title, salary, department_id)
-VALUES(1, "Manager")
-      (2, "Employee")
+VALUES(1, "Manager", 98000, 1)
+      (2, "Employee", 980000, 2)
 
 
 
