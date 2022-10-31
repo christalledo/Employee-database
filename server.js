@@ -93,6 +93,7 @@ function addEmployee() {
     inquirer.prompt(questions)
         .then(answers => {
             db.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) values (?,?,?,?)", [answers.firstName, answers.lastName, answers.role, answers.manager], (err, result) => {
+                console.log(err)
                 console.table(result)
                 init();
             })
@@ -104,7 +105,8 @@ function updateEmployee() {
     const questions = userInterface("update an employee role")
     inquirer.prompt(questions)
         .then(answers => {
-            db.query(`UPDATE employee set employee_id = ?,${answers.employee_id} where id = ?, ${answers.role_id}`, (err, result) => {
+            db.query(`UPDATE employee set role_id = ? where id = ?`, [answers.role_id, answers.employee_id], (err, result) => {
+                console.log(err)
                 console.table(result)
                 init();
             })

@@ -70,7 +70,7 @@ function questions(condition) {
           // Description
           type: "input",
           message: "What is the employee_id that you want to update?",
-          name: "employee_id ",
+          name: "employee_id",
         },
 
         {
@@ -91,7 +91,6 @@ function questions(condition) {
           name: "question",
         },
       ];
-      break;
   }
 }
 
